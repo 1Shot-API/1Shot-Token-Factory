@@ -28,10 +28,10 @@ contract TokenFactory is AccessControl {
     /// @param admin the address which will control minting functionality on this token
     /// @param name a string which will be the name of the deployed token
     /// @param ticker a string which will serve as the token symbol
-    /// @param premint a uint denoting the amount of token to premint (remember there are 18 decimal places)
-    function deployToken(address admin, string calldata name, string calldata ticker, uint premint) public {
+    /// @param maxSupply a uint denoting the maximum supply of the token
+    function deployToken(address admin, string calldata name, string calldata ticker, uint maxSupply) public {
         BeaconProxy proxy = new BeaconProxy(beaconAddress,  '');
-        Token(address(proxy)).initialize(admin, name, ticker, premint);
+        Token(address(proxy)).initialize(admin, name, ticker, maxSupply);
         
         emit TokenCreated(address(proxy));
     }
