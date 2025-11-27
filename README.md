@@ -1,18 +1,10 @@
-# Sample Hardhat Project
+# 1Shot Token Factory
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
-```
+This project is a simple, turn-key ERC-20 token factory that uses the beacon factory pattern from OpenZeppelin for gas-efficient deployment of new ERC-20 tokens. You can use it with your [1Shot API](https://1shotapi.com) projects. 
 
 ## Deployments:
+
+Run the following commands to set up your development environments (you'll need an Infura account and an API key from the blockscanner to verify your contract code):
 
 ```
 npx hardhat vars set INFURA_API_KEY
